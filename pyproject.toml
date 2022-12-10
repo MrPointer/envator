@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "devator"
+version = "0.1.0"
+description = "Elevate you dev-env"
+authors = ["Timor Gruber <timor.gruber@solaredge.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+devator = "devator.main:run"
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+typer = {extras = ["all"], version = "^0.7.0"}
+pydantic = "^1.10.2"
+emoji = "^2.2.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+black = "^22.12.0"
+flake8 = "^6.0.0"
+
+[tool.black]
+line-length = 100
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
