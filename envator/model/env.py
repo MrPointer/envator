@@ -1,6 +1,12 @@
+from enum import Enum
 from typing import List
 
 from pydantic import BaseModel
+
+
+class SupportedBackend(str, Enum):
+    CONTAINER = "container"
+    SSH = "ssh"
 
 
 class BackendConfig(BaseModel):
@@ -16,5 +22,6 @@ class CustomCommandsConfig(BaseModel):
 
 class EnvatorEnvConfig(BaseModel):
     name: str
+    type: SupportedBackend
     backend_config: BackendConfig
-    custom_commands: CustomCommandsConfig
+    custom_commands: CustomCommandsConfig = None

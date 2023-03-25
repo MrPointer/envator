@@ -1,0 +1,2 @@
+class HandlingFailedError(Exception):
+    pass
