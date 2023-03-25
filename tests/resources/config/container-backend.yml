@@ -1,5 +1,5 @@
 env:
-  name: "container-test"
+  name: "envator-container"
   backend: "docker"
   options:
     ports:

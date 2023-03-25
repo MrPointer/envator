@@ -8,6 +8,7 @@ class BackendConfig(BaseModel):
 
 
 class CustomCommandsConfig(BaseModel):
+    init: List[str] = []
     post_create: List[str] = []
     post_start: List[str] = []
     post_stop: List[str] = []

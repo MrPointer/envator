@@ -1,8 +1,10 @@
 from pathlib import Path
 from vyper import v
-from envator.config.model.docker import DockerConfig
 
-from envator.config.model.env import BackendConfig, EnvatorEnvConfig
+from envator.model.container import ContainerConfig
+from envator.model.env import BackendConfig, EnvatorEnvConfig
+from envator.config.configdict import EnvatorConfigDict
+from envator.util.namingcase import NamingCase
 
 
 class ConfigReader:
@@ -20,11 +22,8 @@ class ConfigReader:
         if backend == "docker":
             docker_options = v.get("env.options")
             share_uid = docker_options.pop("shareUid")
+            backend_config = ContainerConfig(share_uid=share_uid, native_options=docker_options)
 
-            backend_config = DockerConfig(share_uid=share_uid, native_options=docker_options)
+        custom_commands = EnvatorConfigDict(v.get("env.customCommands")).with_keys_case(NamingCase.SNAKE)
 
-        custom_commands = v.get("env.customCommands")
-
-        return EnvatorEnvConfig(
-            name=env_name, backend_config=backend_config, custom_commands=custom_commands
-        )
+        return EnvatorEnvConfig(name=env_name, backend_config=backend_config, custom_commands=custom_commands)

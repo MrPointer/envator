@@ -2,7 +2,7 @@ from pathlib import Path
 
 from pydantic import BaseModel
 
-from envator.config.model.env import BackendConfig
+from envator.model.env import BackendConfig
 
 
 class ContainerPortMapping(BaseModel):
@@ -16,6 +16,6 @@ class ContainerVolumeMapping(BaseModel):
     readonly: bool = False
 
 
-class DockerConfig(BackendConfig):
+class ContainerConfig(BackendConfig):
     share_uid: bool = False
     native_options: dict
