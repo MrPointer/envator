@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "envator"
 version = "0.1.0"
-description = "Elevate your dev-env"
+description = "Elevate your development environments"
 authors = ["Timor Gruber <timor.gruber@solaredge.com>"]
 license = "MIT"
 readme = "README.md"
@@ -23,7 +23,7 @@ classifiers = [
 ]
 
 [tool.poetry.scripts]
-devator = "devator.main:run"
+envator = "envator.main:run"
 
 [tool.poetry.dependencies]
 python = "^3.8.1"

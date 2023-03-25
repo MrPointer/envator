@@ -2,11 +2,11 @@ from pathlib import Path
 from vyper import v
 from envator.config.model.docker import DockerConfig
 
-from envator.config.model.env import BackendConfig, DevatorEnvConfig
+from envator.config.model.env import BackendConfig, EnvatorEnvConfig
 
 
 class ConfigReader:
-    def read_config(self, config_source: Path) -> DevatorEnvConfig:
+    def read_config(self, config_source: Path) -> EnvatorEnvConfig:
         v.set_config_name(config_source.stem)
         v.add_config_path(config_source.parent)
         v.read_in_config()
@@ -25,6 +25,6 @@ class ConfigReader:
 
         custom_commands = v.get("env.customCommands")
 
-        return DevatorEnvConfig(
+        return EnvatorEnvConfig(
             name=env_name, backend_config=backend_config, custom_commands=custom_commands
         )

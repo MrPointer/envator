@@ -13,7 +13,7 @@ class CustomCommandsConfig(BaseModel):
     post_stop: List[str] = []
 
 
-class DevatorEnvConfig(BaseModel):
+class EnvatorEnvConfig(BaseModel):
     name: str
     backend_config: BackendConfig
     custom_commands: CustomCommandsConfig

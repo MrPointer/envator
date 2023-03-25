@@ -6,7 +6,7 @@ from envator.const import program_info
 
 app = typer.Typer(
     context_settings=dict(help_option_names=["-h", "--help"]),
-    help=emoji.emojize("devator :arrow_up_small: - ", language="alias") + program_info.PROGRAM_DESCRIPTION,
+    help=emoji.emojize("envator :arrow_up_small: - ", language="alias") + program_info.PROGRAM_DESCRIPTION,
     no_args_is_help=True,
 )
 

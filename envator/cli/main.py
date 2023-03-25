@@ -17,7 +17,7 @@ def up(config_file: Path = typer.Argument(..., exists=True, file_okay=True, dir_
 
 def version_callback(value: bool):
     if value:
-        typer.echo(f"devator {program_info.PROGRAM_VERSION}")
+        typer.echo(f"envator {program_info.PROGRAM_VERSION}")
         raise typer.Exit()
 
 
