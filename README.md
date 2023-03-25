@@ -1,2 +1,3 @@
-# devator
-Elevate your dev-env from anywhere
+# Envator
+
+Environment Elevator 🔃 - Elevate your development environments

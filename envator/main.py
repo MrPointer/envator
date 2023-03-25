@@ -1,5 +1,5 @@
-from devator.cli.main import app
-from devator.const import program_info
+from envator.cli.main import app
+from envator.const import program_info
 
 
 def run():

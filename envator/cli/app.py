@@ -2,7 +2,7 @@ import emoji
 import typer
 from rich.console import Console
 
-from devator.const import program_info
+from envator.const import program_info
 
 app = typer.Typer(
     context_settings=dict(help_option_names=["-h", "--help"]),

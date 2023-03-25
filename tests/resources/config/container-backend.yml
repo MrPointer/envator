@@ -1,0 +1,16 @@
+env:
+  name: "container-test"
+  backend: "docker"
+  options:
+    ports:
+      - "2222:22"
+    volumes:
+      - "$HOME/.ssh:/home/container/.ssh"
+      - source: $PWD/mounted-file
+        target: /home/container/mounted-file
+    security:
+      - apparmor: unconfined
+    shareUid: true
+  customCommands:
+    postCreate:
+      - echo "Created by post-create" > $HOME/post-create-test.txt

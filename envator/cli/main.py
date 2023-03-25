@@ -1,9 +1,18 @@
+from pathlib import Path
 from typing import Optional
 
 import typer
 
-from devator.cli.app import app
-from devator.const import program_info
+from envator.cli.app import app, console
+from envator.config.reader import ConfigReader
+from envator.const import program_info
+
+
+@app.command()
+def up(config_file: Path = typer.Argument(..., exists=True, file_okay=True, dir_okay=False)):
+    conf_reader = ConfigReader()
+    config = conf_reader.read_config(config_file)
+    console.print(config)
 
 
 def version_callback(value: bool):
