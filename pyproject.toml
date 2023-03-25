@@ -5,6 +5,22 @@ description = "Elevate your dev-env"
 authors = ["Timor Gruber <timor.gruber@solaredge.com>"]
 license = "MIT"
 readme = "README.md"
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: System",
+    "Operating System :: Unix",
+    "Environment :: Console",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Unix Shell"
+]
 
 [tool.poetry.scripts]
 devator = "devator.main:run"
@@ -22,7 +38,7 @@ black = "^22.12.0"
 flake8 = "^6.0.0"
 
 [tool.black]
-line-length = 100
+line-length = 110
 
 [build-system]
 requires = ["poetry-core"]
